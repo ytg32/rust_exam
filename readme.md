@@ -1,4 +1,5 @@
 As you may notice, this maximal score for this evaluation is 25/20. That means you can skip some exercices if you want. 
+You can join the discord room about this [exams here](https://discord.gg/3K53C9NH) to ask questions.
 
 Please, write nice code well commented and tested (3 pts)
 
