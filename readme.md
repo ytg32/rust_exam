@@ -1,9 +1,10 @@
 As you may notice, this maximal score for this evaluation is 25/20. That means you can skip some exercices if you want. 
+
 You can join the discord room about this [exams here](https://discord.gg/3K53C9NH) to ask questions.
 
 Please, write nice code well commented and tested (3 pts)
 
-# Questions and Answears (2pts) :
+# Questions and Answers (2pts) :
 
 1. What kind of behaviour a program written in rust can't have ?
 
@@ -44,23 +45,20 @@ for each pixel (Px, Py) on the screen do
     plot(Px, Py, color)
 ```
 
-1. Create a method tha draw the Mandebrot Set (5pt). Color of each pixel will be a gray scale value that map the numbers between 0 and max_iteration to the wole grayscale space (i.e. 0 to 255 )
-Exepected result for the bounds x ⍷ [-2, 2] and y ⍷ [-1.5, 1.5] and max iteration at 100 is the following figure.
+1. Create a method that draws the Mandebrot Set (5pt). Color of each pixel will be a gray scale value that maps the numbers between 0 and max_iteration to the whole grayscale space (i.e. 0 to 255 )
+Exepected result for the bounds x ⍷ [-2, 2] and y ⍷ [-1.5, 1.5] and max iterations of 100 is the following figure.
 ![mandelbrotset](./assets/mandelbrot_set.png)
 
-2. Refactor this method to allow a user to ask for the space he want to display (3pts).
-    1. Thanks to the crate ```text_io``` ask the user to enter the space he want to display with the following format xmin;xmax;ymin;ymax 
+2. Refactor this method to allow a user to ask for the space he wants to display (3pts).
+    1. Using crate ```text_io``` ask the user to enter the space he wants to display with the following format xmin;xmax;ymin;ymax 
     2. Create a praser for this string that will extract the four floating numbers and Refactor the drawing method to use these arguments
     3. If there is a parsing error, draw the Mandelbrot set for the default space : x ⍷ [-2, 2] and y ⍷ [-1.5, 1.5]
 
 **if you did not succeed to draw the Mandelbrot set, you can do this exercice and call an empty function.**
 
-3. Mapping the gray scale color works, but we can't hosnetly say that the result is "nice". We will now use a color palette. (5pt)
-    1. At the beginning of the mandelbrot.rs file, it already exists a trait called `ColorMap`. Create a struct called GrayMap that contains the maximum number of iterations as a member and that implements the trait Colormap. Modify your drawing method to use **only** this struct for drawing. (1pt)
-    2. Thanks to the crate [colorgrad](https://docs.rs/colorgrad/latest/colorgrad/#), create a new struct called ColoredColorMap containing the maximum number of iterations (10_000 is a good value to have a nice drawing) and the Turbo gradient. (2pt)
-    implements the trait Colormap. Modify your drawing method to use **only** this struct for drawing.
+3. Mapping the gray scale color works, but we can't honestly say that the result is "nice". We will now use a color palette. (5pt)
+    1. At the beginning of the mandelbrot.rs file, it already exists a trait called `ColorMap`. Create a struct called GrayMap that contains the maximum number of iterations as a member and that implements the trait `ColorMap`. Modify your drawing method to use **only** this struct for drawing. (1pt)
+    2. Thanks to the crate [colorgrad](https://docs.rs/colorgrad/latest/colorgrad/#), create a new struct called ColoredColorMap containing the maximum number of iterations (10_000 is a good value to have a nice drawing) and the Turbo gradient and implement the trait colormap for this new struct (2pt)    
     3. Modify your drawing method to take as argument a box to a colormap : ```cmap: Box<dyn ColorMap>```. Ask the user to input 'c' for drawing a colored Mandelbrot set or 'gs' to draw a grayscale version of it. If the input is something else than "c" or "gs", we can assume that we want a grayscale drawing. (2pt)
 
-Result of the drawing with the Turbo gradiant and a maximum iteration equal to 10000 look like this : ![colored](./assets/colored_set.png)
-
-
+Result of the drawing with the Turbo gradient and a maximum iteration equal to 10000 looks like this : ![colored](./assets/colored_set.png)
