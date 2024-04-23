@@ -175,8 +175,12 @@ fn mandelbrot_exercice() -> anyhow::Result<RgbImage> {
 
 #[show_image::main]
 fn main() -> anyhow::Result<()> {
+    let image  = chessboard_exercice();
+    let window = create_window("image", Default::default())?;
+    window.set_image("image-001", to_showable_image(&image))?;
+    window.wait_until_destroyed()?;
+
     let image = mandelbrot_exercice();
-    //let image  = image::RgbImage::new(500, 500);
     // Create a window with default options and display the image.
     let window = create_window("image", Default::default())?;
     window.set_image("image-001", to_showable_image(&image.unwrap()))?;
