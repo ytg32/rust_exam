@@ -8,7 +8,7 @@ Please, write nice code well commented and tested (3 pts)
 
 1. What kind of behaviour a program written in rust can't have ?
 
-Answer here ... and commit
+A program written in Rust cannot have behavior that violates the language's ownership and borrowing rules, which are designed to prevent data races, null pointer dereferences, and memory safety issues
 
 # Practical exercices : 
 
